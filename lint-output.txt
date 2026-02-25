@@ -1,0 +1,126 @@
+﻿
+C:\Users\HP\Desktop\my portfolio\components\LiveBackground.tsx
+   4:28  warning  'useThree' is defined but never used                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       @typescript-eslint/no-unused-vars
+  24:23  error    Error: Cannot call impure function during render
+
+`Math.random` is an impure function. Calling an impure function can produce unstable results that update unpredictably when the component happens to re-render. (https://react.dev/reference/rules/components-and-hooks-must-be-pure#components-and-hooks-must-be-idempotent).
+
+C:\Users\HP\Desktop\my portfolio\components\LiveBackground.tsx:24:23
+  22 |         const temp: Particle[] = [];
+  23 |         for (let i = 0; i < count; i++) {
+> 24 |             const t = Math.random() * 100;
+     |                       ^^^^^^^^^^^^^ Cannot call impure function
+  25 |             const factor = 20 + Math.random() * 100;
+  26 |             const speed = 0.01 + Math.random() / 200;
+  27 |             const xFactor = -50 + Math.random() * 100;                                                                                        react-hooks/purity
+  25:33  error    Error: Cannot call impure function during render
+
+`Math.random` is an impure function. Calling an impure function can produce unstable results that update unpredictably when the component happens to re-render. (https://react.dev/reference/rules/components-and-hooks-must-be-pure#components-and-hooks-must-be-idempotent).
+
+C:\Users\HP\Desktop\my portfolio\components\LiveBackground.tsx:25:33
+  23 |         for (let i = 0; i < count; i++) {
+  24 |             const t = Math.random() * 100;
+> 25 |             const factor = 20 + Math.random() * 100;
+     |                                 ^^^^^^^^^^^^^ Cannot call impure function
+  26 |             const speed = 0.01 + Math.random() / 200;
+  27 |             const xFactor = -50 + Math.random() * 100;
+  28 |             const yFactor = -50 + Math.random() * 100;                                                            react-hooks/purity
+  26:34  error    Error: Cannot call impure function during render
+
+`Math.random` is an impure function. Calling an impure function can produce unstable results that update unpredictably when the component happens to re-render. (https://react.dev/reference/rules/components-and-hooks-must-be-pure#components-and-hooks-must-be-idempotent).
+
+C:\Users\HP\Desktop\my portfolio\components\LiveBackground.tsx:26:34
+  24 |             const t = Math.random() * 100;
+  25 |             const factor = 20 + Math.random() * 100;
+> 26 |             const speed = 0.01 + Math.random() / 200;
+     |                                  ^^^^^^^^^^^^^ Cannot call impure function
+  27 |             const xFactor = -50 + Math.random() * 100;
+  28 |             const yFactor = -50 + Math.random() * 100;
+  29 |             const zFactor = -50 + Math.random() * 100;                                              react-hooks/purity
+  27:35  error    Error: Cannot call impure function during render
+
+`Math.random` is an impure function. Calling an impure function can produce unstable results that update unpredictably when the component happens to re-render. (https://react.dev/reference/rules/components-and-hooks-must-be-pure#components-and-hooks-must-be-idempotent).
+
+C:\Users\HP\Desktop\my portfolio\components\LiveBackground.tsx:27:35
+  25 |             const factor = 20 + Math.random() * 100;
+  26 |             const speed = 0.01 + Math.random() / 200;
+> 27 |             const xFactor = -50 + Math.random() * 100;
+     |                                   ^^^^^^^^^^^^^ Cannot call impure function
+  28 |             const yFactor = -50 + Math.random() * 100;
+  29 |             const zFactor = -50 + Math.random() * 100;
+  30 |             temp.push({ t, factor, speed, xFactor, yFactor, zFactor, mx: 0, my: 0 });  react-hooks/purity
+  28:35  error    Error: Cannot call impure function during render
+
+`Math.random` is an impure function. Calling an impure function can produce unstable results that update unpredictably when the component happens to re-render. (https://react.dev/reference/rules/components-and-hooks-must-be-pure#components-and-hooks-must-be-idempotent).
+
+C:\Users\HP\Desktop\my portfolio\components\LiveBackground.tsx:28:35
+  26 |             const speed = 0.01 + Math.random() / 200;
+  27 |             const xFactor = -50 + Math.random() * 100;
+> 28 |             const yFactor = -50 + Math.random() * 100;
+     |                                   ^^^^^^^^^^^^^ Cannot call impure function
+  29 |             const zFactor = -50 + Math.random() * 100;
+  30 |             temp.push({ t, factor, speed, xFactor, yFactor, zFactor, mx: 0, my: 0 });
+  31 |         }                                             react-hooks/purity
+  29:35  error    Error: Cannot call impure function during render
+
+`Math.random` is an impure function. Calling an impure function can produce unstable results that update unpredictably when the component happens to re-render. (https://react.dev/reference/rules/components-and-hooks-must-be-pure#components-and-hooks-must-be-idempotent).
+
+C:\Users\HP\Desktop\my portfolio\components\LiveBackground.tsx:29:35
+  27 |             const xFactor = -50 + Math.random() * 100;
+  28 |             const yFactor = -50 + Math.random() * 100;
+> 29 |             const zFactor = -50 + Math.random() * 100;
+     |                                   ^^^^^^^^^^^^^ Cannot call impure function
+  30 |             temp.push({ t, factor, speed, xFactor, yFactor, zFactor, mx: 0, my: 0 });
+  31 |         }
+  32 |         return temp;                                                                              react-hooks/purity
+  38:25  error    Error: Cannot call impure function during render
+
+`Math.random` is an impure function. Calling an impure function can produce unstable results that update unpredictably when the component happens to re-render. (https://react.dev/reference/rules/components-and-hooks-must-be-pure#components-and-hooks-must-be-idempotent).
+
+C:\Users\HP\Desktop\my portfolio\components\LiveBackground.tsx:38:25
+  36 |         const p = new Float32Array(count * 3);
+  37 |         for (let i = 0; i < count; i++) {
+> 38 |             p[i * 3] = (Math.random() - 0.5) * 10;
+     |                         ^^^^^^^^^^^^^ Cannot call impure function
+  39 |             p[i * 3 + 1] = (Math.random() - 0.5) * 10;
+  40 |             p[i * 3 + 2] = (Math.random() - 0.5) * 10;
+  41 |         }                                                                                                              react-hooks/purity
+  39:29  error    Error: Cannot call impure function during render
+
+`Math.random` is an impure function. Calling an impure function can produce unstable results that update unpredictably when the component happens to re-render. (https://react.dev/reference/rules/components-and-hooks-must-be-pure#components-and-hooks-must-be-idempotent).
+
+C:\Users\HP\Desktop\my portfolio\components\LiveBackground.tsx:39:29
+  37 |         for (let i = 0; i < count; i++) {
+  38 |             p[i * 3] = (Math.random() - 0.5) * 10;
+> 39 |             p[i * 3 + 1] = (Math.random() - 0.5) * 10;
+     |                             ^^^^^^^^^^^^^ Cannot call impure function
+  40 |             p[i * 3 + 2] = (Math.random() - 0.5) * 10;
+  41 |         }
+  42 |         return p;                                                                                                                                       react-hooks/purity
+  40:29  error    Error: Cannot call impure function during render
+
+`Math.random` is an impure function. Calling an impure function can produce unstable results that update unpredictably when the component happens to re-render. (https://react.dev/reference/rules/components-and-hooks-must-be-pure#components-and-hooks-must-be-idempotent).
+
+C:\Users\HP\Desktop\my portfolio\components\LiveBackground.tsx:40:29
+  38 |             p[i * 3] = (Math.random() - 0.5) * 10;
+  39 |             p[i * 3 + 1] = (Math.random() - 0.5) * 10;
+> 40 |             p[i * 3 + 2] = (Math.random() - 0.5) * 10;
+     |                             ^^^^^^^^^^^^^ Cannot call impure function
+  41 |         }
+  42 |         return p;
+  43 |     }, [count]);                                                                                                                                                                react-hooks/purity
+  51:13  error    Error: This value cannot be modified
+
+Modifying a value previously passed as an argument to a hook is not allowed. Consider moving the modification before calling the hook.
+
+C:\Users\HP\Desktop\my portfolio\components\LiveBackground.tsx:51:13
+  49 |         for (let i = 0; i < count; i++) {
+  50 |             const p = particles[i];
+> 51 |             p.t += p.speed / 2;
+     |             ^ `particles` cannot be modified
+  52 |             const { t, factor, xFactor, yFactor, zFactor } = p;
+  53 |
+  54 |             // Update positions based on mouse                                                                                                                                                                                                                                                                                                                              react-hooks/immutability
+
+Γ£û 11 problems (10 errors, 1 warning)
+

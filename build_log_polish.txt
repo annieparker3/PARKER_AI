@@ -1,0 +1,29 @@
+
+> ai-portfolio@0.1.0 build
+> next build
+
+▲ Next.js 16.1.6 (Turbopack)
+
+  Creating an optimized production build ...
+✓ Compiled successfully in 14.0s
+  Running TypeScript ...
+Failed to compile.
+
+./components/ui/Button.tsx:43:14
+Type error: Type '{ disabled?: boolean | undefined; form?: string | undefined; formAction?: string | ((formData: FormData) => void | Promise<void>) | undefined; formEncType?: string | undefined; ... 288 more ...; className: string; } | { ...; }' is not assignable to type 'IntrinsicAttributes & SlotProps & RefAttributes<HTMLElement> & Omit<HTMLMotionProps<"button">, "ref"> & RefAttributes<...>'.
+  Type '{ disabled?: boolean | undefined; form?: string | undefined; formAction?: string | ((formData: FormData) => void | Promise<void>) | undefined; formEncType?: string | undefined; ... 288 more ...; className: string; }' is not assignable to type 'Omit<HTMLMotionProps<"button">, "ref">'.
+    Types of property 'onAnimationStart' are incompatible.
+      Type 'AnimationEventHandler<HTMLButtonElement> | undefined' is not assignable to type '((definition: AnimationDefinition) => void) | undefined'.
+        Type 'AnimationEventHandler<HTMLButtonElement>' is not assignable to type '(definition: AnimationDefinition) => void'.
+          Types of parameters 'event' and 'definition' are incompatible.
+            Type 'AnimationDefinition' is not assignable to type 'AnimationEvent<HTMLButtonElement>'.
+              Type 'string' is not assignable to type 'AnimationEvent<HTMLButtonElement>'.
+
+[0m [90m 41 |[39m
+ [90m 42 |[39m         [36mreturn[39m (
+[31m[1m>[22m[39m[90m 43 |[39m             [33m<[39m[33mComp[39m
+ [90m    |[39m              [31m[1m^[22m[39m
+ [90m 44 |[39m                 ref[33m=[39m{ref}
+ [90m 45 |[39m                 className[33m=[39m{cn(
+ [90m 46 |[39m                     [32m"inline-flex items-center justify-center rounded-xl text-sm font-bold ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 touch-manipulation min-h-[44px]"[39m[33m,[39m[0m
+Next.js build worker exited with code: 1 and signal: null

@@ -1,0 +1,24 @@
+
+> ai-portfolio@0.1.0 build
+> next build
+
+▲ Next.js 16.1.6 (Turbopack)
+
+  Creating an optimized production build ...
+✓ Compiled successfully in 14.5s
+  Running TypeScript ...
+Failed to compile.
+
+./components/Projects.tsx:89:103
+Type error: No overload matches this call.
+  The last overload gave the following error.
+    Object literal may only specify known properties, and 'className' does not exist in type 'Partial<unknown> & Attributes'.
+
+[0m [90m 87 |[39m                                     [33m<[39m[33mdiv[39m className[33m=[39m[32m"relative z-10"[39m[33m>[39m
+ [90m 88 |[39m                                         [33m<[39m[33mdiv[39m className[33m=[39m{[32m`inline-flex p-3 rounded-2xl bg-gradient-to-br ${project.color} mb-6 shadow-lg text-white`[39m}[33m>[39m
+[31m[1m>[22m[39m[90m 89 |[39m                                             {[33mReact[39m[33m.[39mcloneElement(project[33m.[39micon [36mas[39m [33mReact[39m[33m.[39m[33mReactElement[39m[33m,[39m { className[33m:[39m [32m"w-6 h-6"[39m })}
+ [90m    |[39m                                                                                                       [31m[1m^[22m[39m
+ [90m 90 |[39m                                         [33m<[39m[33m/[39m[33mdiv[39m[33m>[39m
+ [90m 91 |[39m
+ [90m 92 |[39m                                         [33m<[39m[33mh4[39m className[33m=[39m[32m"text-[10px] uppercase tracking-[0.3em] text-muted-foreground font-black mb-2"[39m[33m>[39m[0m
+Next.js build worker exited with code: 1 and signal: null
