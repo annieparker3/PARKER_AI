@@ -120,8 +120,10 @@ export default function Projects() {
                                             <Button variant="link" size="sm" className="h-auto p-0 text-xs font-black uppercase tracking-widest gap-2">
                                                 Architecture <ExternalLink size={14} />
                                             </Button>
-                                            <Button variant="link" size="sm" className="h-auto p-0 text-xs font-black uppercase tracking-widest gap-2 text-muted-foreground hover:text-foreground">
-                                                Source <Github size={14} />
+                                            <Button asChild variant="link" size="sm" className="h-auto p-0 text-xs font-black uppercase tracking-widest gap-2 text-muted-foreground hover:text-foreground">
+                                                <a href="https://github.com/annieparker3" target="_blank" rel="noopener noreferrer">
+                                                    Source <Github size={14} />
+                                                </a>
                                             </Button>
                                         </div>
                                     </div>

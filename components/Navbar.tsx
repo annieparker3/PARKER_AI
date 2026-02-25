@@ -5,7 +5,6 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Cpu } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/Button";
-import { ThemeToggle } from "@/components/ui/ThemeToggle";
 
 const navLinks = [
     { name: "About", href: "#about" },
@@ -74,16 +73,14 @@ export default function Navbar() {
                             </motion.a>
                         ))}
                         <div className="flex items-center gap-4 ml-4">
-                            <ThemeToggle />
-                            <Button size="sm" variant="brand" className="px-6 rounded-full uppercase tracking-widest text-[10px] h-9 min-h-0">
-                                Contact
+                            <Button asChild size="sm" variant="brand" className="px-6 rounded-full uppercase tracking-widest text-[10px] h-9 min-h-0">
+                                <a href="mailto:anitadarkofirdaus@gmail.com">Contact</a>
                             </Button>
                         </div>
                     </div>
 
                     {/* Mobile Menu Button */}
                     <div className="md:hidden flex items-center gap-4">
-                        <ThemeToggle />
                         <button
                             onClick={() => setIsOpen(!isOpen)}
                             className="text-foreground p-2 hover:bg-muted rounded-lg transition-colors"
@@ -117,8 +114,8 @@ export default function Navbar() {
                                 </a>
                             ))}
                             <div className="pt-4 px-3 flex flex-col gap-4">
-                                <Button variant="brand" className="w-full rounded-full uppercase tracking-widest text-xs h-12">
-                                    Get in Touch
+                                <Button asChild variant="brand" className="w-full rounded-full uppercase tracking-widest text-xs h-12">
+                                    <a href="mailto:anitadarkofirdaus@gmail.com">Get in Touch</a>
                                 </Button>
                             </div>
                         </div>

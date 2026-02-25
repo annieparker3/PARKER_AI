@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Darko Anita Parker | Head of AI Systems",
+  title: "Darko Anita Firdaus | Head of AI Systems",
   description: "Founding Engineer & Head of AI Systems at INTELLIGENT SYSTEMS. Architecting Intelligent Systems for the Present and the Autonomous Future.",
 };
 

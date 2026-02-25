@@ -52,7 +52,7 @@ export default function Hero() {
                         className="text-5xl md:text-8xl font-black tracking-tighter mb-6 leading-[0.9]"
                     >
                         DARKO ANITA <br />
-                        <span className="text-gradient font-black">PARKER</span>
+                        <span className="text-gradient font-black">FIRDAUS</span>
                     </motion.h1>
 
                     <motion.p
@@ -81,9 +81,12 @@ export default function Hero() {
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
                             className="group min-w-[200px]"
+                            asChild
                         >
-                            <Bot className="mr-2 w-5 h-5" />
-                            View AI Projects
+                            <a href="https://wa.me/233539833806" target="_blank" rel="noopener noreferrer">
+                                <Bot className="mr-2 w-5 h-5" />
+                                Chat on WhatsApp
+                            </a>
                         </MotionButton>
                     </motion.div>
                 </motion.div>

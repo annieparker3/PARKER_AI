@@ -2,7 +2,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { Cpu, Github, Linkedin, Twitter, Mail, ArrowUp } from "lucide-react";
+import { Cpu, Github, Linkedin, Twitter, Mail, ArrowUp, MessageCircle } from "lucide-react";
 
 export default function Footer() {
     const scrollToTop = () => {
@@ -27,10 +27,10 @@ export default function Footer() {
                         </p>
                         <div className="flex gap-4">
                             {[
-                                { Icon: Github, href: "#" },
-                                { Icon: Linkedin, href: "#" },
-                                { Icon: Twitter, href: "#" },
-                                { Icon: Mail, href: "#" }
+                                { Icon: Github, href: "https://github.com/annieparker3" },
+                                { Icon: Linkedin, href: "https://www.linkedin.com/in/anita-firdaus-darko-14015838b" },
+                                { Icon: MessageCircle, href: "https://wa.me/233539833806" },
+                                { Icon: Mail, href: "mailto:anitadarkofirdaus@gmail.com" }
                             ].map(({ Icon, href }, i) => (
                                 <motion.a
                                     key={i}
@@ -71,7 +71,7 @@ export default function Footer() {
 
                 <div className="pt-8 border-t border-border flex flex-col md:flex-row justify-between items-center gap-4">
                     <p className="text-muted-foreground/30 text-[10px] uppercase tracking-widest font-black font-sans">
-                        © 2026 DARKO ANITA PARKER. ALL RIGHTS RESERVED.
+                        © 2026 DARKO ANITA FIRDAUS. ALL RIGHTS RESERVED.
                     </p>
                     <button
                         onClick={scrollToTop}
