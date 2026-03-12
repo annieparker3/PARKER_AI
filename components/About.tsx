@@ -41,7 +41,7 @@ export default function About() {
                         </h2>
                         <h3 className="text-4xl md:text-5xl font-black mb-6 tracking-tighter">
                             Lead Engineer. <br />
-                            <span className="text-muted-foreground/40 font-black">Acting Executive.</span> <br />
+                            <span className="text-muted-foreground/40 font-black">CO-Founder.</span> <br />
                             AI Architect.
                         </h3>
                         <div className="space-y-4 text-foreground/70 text-lg leading-relaxed font-sans max-w-xl">
@@ -49,7 +49,7 @@ export default function About() {
                                 I am the Lead Engineer and Head of AI Systems at <span className="text-foreground font-medium">INTELLIGENT SYSTEMS</span>, responsible for the technical backbone of our most innovative products.
                             </p>
                             <p>
-                                As the acting executive lead when the CEO is offline, I bridge the gap between high-level business strategy and deep technical execution. My focus is on building <span className="text-foreground font-semibold italic">AI-first systems</span> that are scalable, ethical, and production-ready.
+                                As CO-Founder, I bridge the gap between high-level business strategy and deep technical execution. My focus is on building <span className="text-foreground font-semibold italic">AI-first systems</span> that are scalable, ethical, and production-ready.
                             </p>
                         </div>
                     </motion.div>

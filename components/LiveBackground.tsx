@@ -1,8 +1,6 @@
 "use client";
-"use no memo";
 
-
-import React, { useRef, useMemo } from "react";
+import React, { useRef, useMemo, useEffect } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import * as THREE from "three";
 
@@ -19,13 +17,9 @@ interface Particle {
 
 function Particles({ count = 1500 }) {
     const mesh = useRef<THREE.Points>(null!);
-
-    // Using useRef for high-performance mutations to avoid React Compiler issues
     const particlesRef = useRef<Particle[]>([]);
 
-    // Initialize particles only once
-    /* eslint-disable react-hooks/purity */
-    useMemo(() => {
+    useEffect(() => {
         const temp: Particle[] = [];
         for (let i = 0; i < count; i++) {
             const t = Math.random() * 100;
@@ -37,22 +31,28 @@ function Particles({ count = 1500 }) {
             temp.push({ t, factor, speed, xFactor, yFactor, zFactor, mx: 0, my: 0 });
         }
         particlesRef.current = temp;
+
+        if (mesh.current) {
+            const attr = mesh.current.geometry.attributes.position;
+            for (let i = 0; i < count; i++) {
+                attr.setXYZ(
+                    i,
+                    (Math.random() - 0.5) * 10,
+                    (Math.random() - 0.5) * 10,
+                    (Math.random() - 0.5) * 10
+                );
+            }
+            attr.needsUpdate = true;
+        }
     }, [count]);
 
-    const points = useMemo(() => {
-        /* eslint-disable react-hooks/purity */
-        const p = new Float32Array(count * 3);
-        for (let i = 0; i < count; i++) {
-            p[i * 3] = (Math.random() - 0.5) * 10;
-            p[i * 3 + 1] = (Math.random() - 0.5) * 10;
-            p[i * 3 + 2] = (Math.random() - 0.5) * 10;
-        }
-        return p;
-    }, [count]);
+    const points = useMemo(() => new Float32Array(count * 3), [count]);
 
     useFrame((state) => {
         const time = state.clock.getElapsedTime();
         const particles = particlesRef.current;
+
+        if (!particles || particles.length === 0) return;
 
         // Smoothly update positions
         for (let i = 0; i < count; i++) {

@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 import { motion, Variants } from "framer-motion";
 import { ArrowRight, Bot, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/Button";
@@ -34,62 +35,96 @@ export default function Hero() {
     return (
         <section className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-                <motion.div
-                    variants={containerVariants}
-                    initial="hidden"
-                    animate="visible"
-                    className="text-center"
-                >
-                    <motion.div variants={itemVariants} className="mb-6">
-                        <Badge variant="outline" className="gap-2 py-1 px-4 border-primary/20 bg-primary/5">
-                            <Sparkles className="w-4 h-4 text-accent" />
-                            Founding Engineer & Head of AI Systems
-                        </Badge>
-                    </motion.div>
-
-                    <motion.h1
-                        variants={itemVariants}
-                        className="text-5xl md:text-8xl font-black tracking-tighter mb-6 leading-[0.9]"
-                    >
-                        DARKO ANITA <br />
-                        <span className="text-gradient font-black">FIRDAUS</span>
-                    </motion.h1>
-
-                    <motion.p
-                        variants={itemVariants}
-                        className="text-lg md:text-2xl text-foreground/60 max-w-2xl mx-auto mb-10 leading-relaxed font-sans"
-                    >
-                        Architecting <span className="text-foreground font-semibold">Intelligent Systems</span> for the Present and the <span className="text-primary font-semibold">Autonomous Future</span>.
-                    </motion.p>
-
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    {/* Left: Text Content */}
                     <motion.div
-                        variants={itemVariants}
-                        className="flex flex-col sm:flex-row items-center justify-center gap-4"
+                        variants={containerVariants}
+                        initial="hidden"
+                        animate="visible"
                     >
-                        <MotionButton
-                            size="lg"
-                            variant="brand"
-                            whileHover={{ scale: 1.05 }}
-                            whileTap={{ scale: 0.95 }}
-                            className="group min-w-[200px]"
+                        <motion.div variants={itemVariants} className="mb-6">
+                            <Badge variant="outline" className="gap-2 py-1 px-4 border-primary/20 bg-primary/5">
+                                <Sparkles className="w-4 h-4 text-accent" />
+                                Founding Engineer & Head of AI Systems
+                            </Badge>
+                        </motion.div>
+
+                        <motion.h1
+                            variants={itemVariants}
+                            className="text-5xl md:text-7xl font-black tracking-tighter mb-6 leading-[0.9]"
                         >
-                            Explore My Work <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                        </MotionButton>
-                        <MotionButton
-                            size="lg"
-                            variant="outline"
-                            whileHover={{ scale: 1.05 }}
-                            whileTap={{ scale: 0.95 }}
-                            className="group min-w-[200px]"
-                            asChild
+                            DARKO ANITA <br />
+                            <span className="text-gradient font-black">FIRDAUS</span>
+                        </motion.h1>
+
+                        <motion.p
+                            variants={itemVariants}
+                            className="text-lg md:text-xl text-foreground/60 max-w-xl mb-10 leading-relaxed font-sans"
                         >
-                            <a href="https://wa.me/233539833806" target="_blank" rel="noopener noreferrer">
-                                <Bot className="mr-2 w-5 h-5" />
-                                Chat on WhatsApp
-                            </a>
-                        </MotionButton>
+                            Architecting <span className="text-foreground font-semibold">Intelligent Systems</span> for the Present and the <span className="text-primary font-semibold">Autonomous Future</span>.
+                        </motion.p>
+
+                        <motion.div
+                            variants={itemVariants}
+                            className="flex flex-col sm:flex-row items-start gap-4"
+                        >
+                            <MotionButton
+                                size="lg"
+                                variant="brand"
+                                whileHover={{ scale: 1.05 }}
+                                whileTap={{ scale: 0.95 }}
+                                className="group min-w-[200px]"
+                                asChild
+                            >
+                                <a href="#projects">
+                                    Explore My Work <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                                </a>
+                            </MotionButton>
+                            <MotionButton
+                                size="lg"
+                                variant="outline"
+                                whileHover={{ scale: 1.05 }}
+                                whileTap={{ scale: 0.95 }}
+                                className="group min-w-[200px]"
+                                asChild
+                            >
+                                <a href="https://wa.me/233539833806" target="_blank" rel="noopener noreferrer">
+                                    <Bot className="mr-2 w-5 h-5" />
+                                    Chat on WhatsApp
+                                </a>
+                            </MotionButton>
+                        </motion.div>
                     </motion.div>
-                </motion.div>
+
+                    {/* Right: Profile Image */}
+                    <motion.div
+                        initial={{ opacity: 0, scale: 0.9 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        transition={{ duration: 0.8, delay: 0.3 }}
+                        className="relative flex justify-center lg:justify-end"
+                    >
+                        <div className="relative w-full max-w-md">
+                            {/* Glow Background */}
+                            <div className="absolute inset-0 bg-gradient-to-br from-primary/30 to-secondary/30 blur-3xl rounded-3xl" />
+                            
+                            {/* Image Container */}
+                            <div className="relative rounded-3xl overflow-hidden border border-primary/20 shadow-2xl">
+                                <Image
+                                    src="/me.jpg"
+                                    alt="Darko Anita Firdaus - AI Systems Architect"
+                                    width={500}
+                                    height={500}
+                                    priority
+                                    className="w-full h-auto object-contain"
+                                    style={{ maxHeight: '600px' }}
+                                />
+                                
+                                {/* Overlay Gradient */}
+                                <div className="absolute inset-0 bg-gradient-to-t from-background/40 via-transparent to-transparent" />
+                            </div>
+                        </div>
+                    </motion.div>
+                </div>
 
                 {/* Floating Decorative Elements */}
                 <motion.div

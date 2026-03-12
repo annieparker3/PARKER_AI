@@ -14,6 +14,7 @@ interface ProjectItem {
     tech: string[];
     icon: React.ComponentType<LucideProps>;
     color: string;
+    architectureLink?: string;
 }
 
 const projects: ProjectItem[] = [
@@ -23,7 +24,8 @@ const projects: ProjectItem[] = [
         description: "A high-performance system designed to transform raw concepts into structured AI system architectures.",
         tech: ["Python", "FastAPI", "OpenAI", "Next.js"],
         icon: Cpu,
-        color: "from-blue-500 to-cyan-400"
+        color: "from-blue-500 to-cyan-400",
+        architectureLink: "https://github.com/annieparker3"
     },
     {
         title: "LEARN WITH ADVENTURE",
@@ -31,7 +33,8 @@ const projects: ProjectItem[] = [
         description: "Revolutionary educational platform using generative AI to create adaptive, immersive learning narratives.",
         tech: ["Stable Diffusion", "GPT-4", "TypeScript", "Tailwind"],
         icon: Sparkles,
-        color: "from-purple-500 to-pink-500"
+        color: "from-purple-500 to-pink-500",
+        architectureLink: "https://github.com/annieparker3"
     },
     {
         title: "COGNITIVE WEAVER",
@@ -39,7 +42,8 @@ const projects: ProjectItem[] = [
         description: "Multi-agent orchestration system for real-time content distillation and semantic linking.",
         tech: ["Node.js", "LangChain", "Pinecone", "Vite"],
         icon: Code,
-        color: "from-royal-purple to-vibrant-pink"
+        color: "from-royal-purple to-vibrant-pink",
+        architectureLink: "https://github.com/annieparker3"
     },
     {
         title: "BudgetUp",
@@ -47,7 +51,8 @@ const projects: ProjectItem[] = [
         description: "Autonomous financial management system with predictive spending analysis and automated budgeting.",
         tech: ["Flutter", "Firebase", "TensorFlow Lite", "Python"],
         icon: TrendingUp,
-        color: "from-emerald-500 to-blue-500"
+        color: "from-emerald-500 to-blue-500",
+        architectureLink: "https://github.com/annieparker3"
     },
 ];
 
@@ -117,8 +122,10 @@ export default function Projects() {
                                         </div>
 
                                         <div className="flex items-center gap-4">
-                                            <Button variant="link" size="sm" className="h-auto p-0 text-xs font-black uppercase tracking-widest gap-2">
-                                                Architecture <ExternalLink size={14} />
+                                            <Button asChild variant="link" size="sm" className="h-auto p-0 text-xs font-black uppercase tracking-widest gap-2">
+                                                <a href={project.architectureLink} target="_blank" rel="noopener noreferrer">
+                                                    Architecture <ExternalLink size={14} />
+                                                </a>
                                             </Button>
                                             <Button asChild variant="link" size="sm" className="h-auto p-0 text-xs font-black uppercase tracking-widest gap-2 text-muted-foreground hover:text-foreground">
                                                 <a href="https://github.com/annieparker3" target="_blank" rel="noopener noreferrer">
